@@ -95,7 +95,8 @@ Invoices can be saved as `.json` files and reloaded later — preserving all fie
 
 ## 📸 Screenshots
 
-> _Add your screenshots here_
+<img width="1904" height="988" alt="image" src="https://github.com/user-attachments/assets/98939016-350a-4718-a35f-065960bd133c" />
+
 
 ---
 
