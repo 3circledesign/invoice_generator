@@ -1,105 +1,62 @@
-# 🧾 Invoice Generator
+# Invoice Generator — Portable Desktop App
 
-A portable, offline-first desktop invoice generator built with **Python + Tkinter**. No installation needed — just run and go.
+A clean, portable invoice generator built with Python + Tkinter.  
+No installer needed. Just run and go.
 
----
+## Quick Start
 
-## ✨ Features
-
-- **Company logo** — upload PNG/JPG, appears on the exported PDF
-- **From / Bill To** — full address cards for your details and your client
-- **Contact database** — saved contacts auto-complete as you type, or browse with **▼ Select**
-- **Line items** — unlimited rows with description, qty, unit price, and auto-calculated amount
-- **Smart description autocomplete** — saved items suggest themselves and auto-fill the last-used rate
-- **Live totals** — subtotal, optional tax (any %), and grand total update in real time
-- **Multi-currency** — RM, USD, SGD, EUR, GBP, JPY
-- **Export to PDF** — clean A4 invoice, opens automatically after export
-- **Save / Load JSON** — save your invoice state and reload it later
-- **Database manager** — browse, search, and delete saved contacts and line items
-- **Portable** — single `.py` file, runs anywhere Python 3.9+ is installed
-
----
-
-## 🚀 Quick Start
-
-### Windows
+**Windows:**
 ```
 Double-click run.bat
 ```
-Dependencies are installed automatically on first launch.
 
-### macOS / Linux
+**Any OS (manual):**
 ```bash
 pip install Pillow reportlab
 python invoice_app.py
 ```
 
----
-
-## 📋 Requirements
-
-- Python 3.9+
-- Pillow
-- ReportLab
-
-> Both are auto-installed by `run.bat` on first run.
+> Dependencies (Pillow + reportlab) are also auto-installed on first launch.
 
 ---
 
-## 📁 File Structure
+## Features
+
+| Feature | Details |
+|---|---|
+| 📋 Invoice Header | Invoice #, Date, Due Date, PO Number |
+| 🏢 From / To | Your details + client billing address |
+| 🖼 Logo | Upload PNG/JPG — appears on the PDF |
+| 📝 Line Items | Unlimited rows — Description, Qty, Unit Price, auto Amount |
+| 🧮 Auto Totals | Live subtotal, tax, and grand total |
+| 💰 Tax Toggle | Enable/disable tax with custom % |
+| 💱 Currency | RM, USD, SGD, EUR, GBP, JPY |
+| 📄 Export PDF | Professional A4 invoice PDF |
+| 💾 Save/Load | Save as JSON, reload later |
+| 🗑 Clear | Reset for a fresh invoice |
+
+---
+
+## File Structure
 
 ```
 invoice_app/
-├── invoice_app.py       # Main application — single file
-├── invoice_data.db      # SQLite database (auto-created on first run)
-├── run.bat              # Windows launcher
-├── requirements.txt     # pip dependencies
-└── README.md
+├── invoice_app.py   ← Main application (single file)
+├── run.bat          ← Windows launcher (auto-installs deps)
+├── requirements.txt ← pip dependencies
+└── README.md        ← This file
 ```
 
 ---
 
-## 🗄 Database
+## Tips
 
-The app stores data locally in `invoice_data.db` (SQLite) — no server, no internet required.
-
-| Table | Stores |
-|---|---|
-| `contacts` | Name, address, phone, email — for FROM and BILL TO cards |
-| `line_items` | Description + last-used rate, sorted by frequency |
-
-**Contacts** are saved automatically every time you export a PDF, or manually via the **💾 Save Contact** button on each card.
-
-**Line items** are saved automatically on PDF export and suggested via autocomplete when typing in the description field.
+- **Placeholder text** in address fields clears when you click them.
+- **Tax** — tick the checkbox and enter any %, e.g. `6` for SST 6%.
+- **Logo** — PNG with transparent background looks best on PDF.
+- **JSON save** — stores everything including logo path for reuse.
+- **PDF** — opens automatically after export (Windows).
 
 ---
 
-## 🖨 PDF Export
-
-The exported PDF includes:
-
-- Your logo (top left)
-- Invoice #, Date, Due Date (top right)
-- FROM and BILL TO address blocks
-- Line items table with qty, unit price, and amount
-- Subtotal, tax (optional, any %), and grand total
-- Notes / payment info section
-
----
-
-## 💾 Save & Load
-
-Invoices can be saved as `.json` files and reloaded later — preserving all fields, line items, tax settings, notes, and logo path.
-
----
-
-## 📸 Screenshots
-
-<img width="1904" height="988" alt="image" src="https://github.com/user-attachments/assets/98939016-350a-4718-a35f-065960bd133c" />
-
-
----
-
-## 📄 License
-
-MIT — free to use, modify, and distribute.
+Made with Python 3 · tkinter · Pillow · ReportLab
